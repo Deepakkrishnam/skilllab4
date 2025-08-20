@@ -1,22 +1,21 @@
-pipeline{
-   agent any
-   
-   stages{
-      stage('Checkout'){
-          steps {
-              git branch: 'main',url:
-'https://github.com/Deepakkrishnam/SkillLab01.git' 
-          } 
-      }
-      stage('Hello'){
-           steps {
-                echo "Hello from Jenkins Pipeline!"
-           }
-      }
-      stage('Goodbye'){
-         steps{
-             echo "pipeline finished successfully"
-          }       
-         }  
-        } 
-       }
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building project...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+            }
+        }
+    }
+}
+
